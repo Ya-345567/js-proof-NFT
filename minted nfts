@@ -1,0 +1,31 @@
+let mintedNFTs = [];
+
+function mintNFT(name, description) {
+  const nft = {
+    name,
+    description,
+  };
+
+  mintedNFTs.push(nft);
+}
+
+function listNFTs() {
+  console.log(" The minted NFTs:");
+  for (const nft of mintedNFTs) {
+    console.log(`  - Name: ${nft.name}`);
+    console.log(`    Description: ${nft.description}`);
+    console.log("---");
+  }
+}
+
+function getTotalSupply() {
+  return mintedNFTs.length;
+}
+
+mintNFT("rohan ", "student learning js proof");
+mintNFT("rohit", "student moving to eth beginner course");
+
+listNFTs();
+
+const totalNFTs = getTotalSupply();
+console.log(`The total minted NFTs: ${totalNFTs}`);
